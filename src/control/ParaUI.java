@@ -65,9 +65,7 @@ public class ParaUI extends UI {
 								JButton boton = (JButton) e.getSource();
 								Coordenada coordenada2 = botonera.getCoordenada(boton);
 								realizarJugada(coordenada2);
-
 								if (controlador.isMina(coordenada2).isRespuesta()) {
-									boton.setText(controlador.isMina(coordenada2).getMensaje());
 									jugar = false;
 								}
 							}
@@ -76,6 +74,7 @@ public class ParaUI extends UI {
 							JButton boton = (JButton) e.getSource();
 							Coordenada coordenada2 = botonera.getCoordenada(boton);
 							boton.setText(controlador.isMarcada(coordenada2).getMensaje());
+							
 						}
 					}
 				});
@@ -86,6 +85,9 @@ public class ParaUI extends UI {
 		ArrayList<RespuestaColocacion> arrayRespuestasColocacion = controlador.realizarJugada(coordenada);
 		for (RespuestaColocacion respuestaColocacion : arrayRespuestasColocacion) {
 			botonera.getButton(respuestaColocacion.getCoordenada()).setText(respuestaColocacion.getMensaje());
+			
+				
+			
 		}
 		;
 	};
